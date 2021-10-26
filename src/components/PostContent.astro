@@ -1,0 +1,9 @@
+---
+    import { Markdown } from 'astro/components';
+
+    const { content } = Astro.props
+---
+
+<div itemprop="articleBody" class="article">
+    <Markdown content={content} />
+</div>

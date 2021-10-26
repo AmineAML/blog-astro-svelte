@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://blog.amineamellouk.com/sitemap.xml

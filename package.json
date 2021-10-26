@@ -1,0 +1,22 @@
+{
+  "name": "@example/starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@astrojs/renderer-svelte": "^0.1.2",
+    "astro": "^0.20.12",
+    "dotenv": "^10.0.0",
+    "tailwindcss": "^2.2.17"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "daisy": "^0.2.0",
+    "daisyui": "^1.14.7"
+  }
+}

@@ -1,0 +1,145 @@
+---
+    import PostContent from '../../components/PostContent.astro'
+
+    import PostHeader from '../../components/PostHeader.svelte'
+
+    import PostQuote from '../../components/PostQuote.svelte'
+
+    import PostShare from '../../components/PostShare.svelte'
+
+    import PostAuthor from '../../components/PostAuthor.svelte'
+
+    import { blogUrl, apiUrl } from '../../lib/variables.js';
+
+    const { slug } = Astro.request.params;
+
+    const response = await fetch(`${apiUrl}/articles/${slug}`);
+    const data = await response.json();
+
+    export async function getStaticPaths({ rss }) {
+        const response = await fetch(`${apiUrl}/articles`);
+        const data = await response.json();
+
+        rss({
+            // The RSS Feed title, description, and custom metadata.
+            title: 'Amine Amellouk\'s blog',
+            description: 'A blog about programming, Software Development with tutorials and topics discussions mainly about the Back-End and the DevOps',
+            customData: `<language>en-us</language>`,
+            // The list of items for your RSS feed, sorted.
+            items: [...data].reverse().map(article => ({
+                title: article.title,
+                description: article.description,
+                link: `${apiUrl}/posts/${article.slug}`,
+                pubDate: article.published_at,
+            })),
+            // Optional: Customize where the file is written to.
+            // Otherwise, defaults to "/rss.xml"
+            // dest: "/my/custom/feed.xml",
+        });
+
+        return data.map(article => {
+            const { slug } = article
+            return {
+                params: {
+                    slug
+                }
+            }
+        })
+    }
+
+    const url = `${apiUrl}/posts/${slug}`;
+
+    const title = `${data.title} | Amine Amellouk\'s blog`;
+---
+
+<!doctype html>
+
+<html lang="en" data-theme="retro" prefix="og: https://ogp.me/ns/article#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{title}</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <!-- <link rel="stylesheet" href="/style/global.css" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="/style/home.css"> -->
+    <link rel="stylesheet" href={Astro.resolve("../../assets/global.css")}>
+
+    <meta name="description" content={data.description}>
+
+    <!-- VS Code doesn't support json ld and shows errors but it does not effect the project -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": data.title,
+      "image": [
+        data.image.formats.medium.url,
+       ],
+      "datePublished": data.published_at,
+      "dateModified": data.updated_at,
+      "author": {
+          "@type": "Person",
+          "name": data.author.name,
+          "url": data.author.website
+        }
+    }
+    </script>
+
+    <meta property="og:title" content={data.title}>
+    <meta property="og:type" content="article">
+    <meta property="og:url" content={url}>
+    <meta property="og:image" content={data.image.formats.medium.url}>
+    <meta property="og:image:alt" content={`Thumbnail for ${data.title} blog post`}>
+    <meta property="og:description" content={data.description}>
+    <meta property="og:site_name" content="Amine Amellouk's Blog">
+    <meta property="article:published_time" content={data.published_at}>
+    <meta property="article:modified_time" content={data.updated_at}>
+    <meta property="article:author:first_name" content={data.author.name.split(' ')[0]}>
+    <meta property="article:author:last_name" content={data.author.name.split(' ')[1]}>
+    <meta property="article:section" content={data.topics.map(function(topic) { return topic.name }).join(', ')}>
+    <meta property="article:tag" content={data.topics.map(function(topic) { return topic.name }).join(', ')}>
+    <!-- <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+    <meta property="og:locale:alternate" content="es_ES" /> -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@aml_amine" />
+    <meta name="twitter:title" content={data.title} />
+    <meta name="twitter:description" content={data.description} />
+    <meta name="twitter:image" content={data.image.formats.medium.url} />
+    <meta name="twitter:image:alt" content={`Thumbnail for ${data.title} blog post`}>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="navbar mb-2 shadow-lg rounded-box">
+	        <div class="flex-1 px-2 mx-2">
+		        <div class="items-stretch hidden lg:flex">
+			        <a class="btn btn-ghost btn-sm rounded-btn" href="/"> Blog </a>
+			        <a class="btn btn-ghost btn-sm rounded-btn" href="/about"> About </a>
+		        </div>
+	        </div>
+    </header>
+
+    <main class="container mx-auto px-4 max-w-xl">
+        <article itemscope itemtype="http://schema.org/Article">
+            <div class="flex flex-col space-y-2 mt-10 mb-10">
+                <PostHeader title={data.title} image={data.image} imageSource={data.image_source} topics={data.topics} publishedAt={data.published_at} author={data.author} />
+                <div class="divider" />
+                <PostContent content={data.content} />
+                <PostQuote quote={data.quote} quoteBy={data.quote_by} />
+                <div class="divider" />
+                <PostShare url={url} />
+                <PostAuthor author={data.author} />
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

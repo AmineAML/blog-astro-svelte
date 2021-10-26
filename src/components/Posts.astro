@@ -1,0 +1,13 @@
+---
+	import Default from './Default.svelte';
+	import { apiUrl } from '../lib/variables.js';
+	
+	const response = await fetch(`${apiUrl}/topics`);
+	const data = await response.json();
+
+	const responseArt = await fetch(`${apiUrl}/articles`);
+	const dataArt = await responseArt.json();
+---
+<section>
+	<Default data={[{ name: 'all'},...data]} dataArt={dataArt} dataArtAsCopy={dataArt} client:load />
+</section>
