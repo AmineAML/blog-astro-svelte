@@ -7,6 +7,7 @@
         <div class="items-stretch hidden lg:flex">
             <a class="btn btn-ghost btn-sm rounded-btn" href="/" aria-label="blog"> Blog </a>
             <a class="btn btn-ghost btn-sm rounded-btn" href="/about" aria-label="about"> About </a>
+            <a class="btn btn-ghost btn-sm rounded-btn" href="/rss.xml" aria-label="about"> RSS </a>
         </div>
     </div>
 </header>

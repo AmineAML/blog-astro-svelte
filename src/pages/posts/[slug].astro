@@ -1,13 +1,15 @@
 ---
-    import PostContent from '../../components/PostContent.astro'
+    import PostContent from '../../components/PostContent.astro';
 
-    import PostHeader from '../../components/PostHeader.svelte'
+    import PostHeader from '../../components/PostHeader.svelte';
 
-    import PostQuote from '../../components/PostQuote.svelte'
+    import PostQuote from '../../components/PostQuote.svelte';
 
-    import PostShare from '../../components/PostShare.svelte'
+    import PostShare from '../../components/PostShare.svelte';
 
-    import PostAuthor from '../../components/PostAuthor.svelte'
+    import PostAuthor from '../../components/PostAuthor.svelte';
+
+    import Footer from '../../components/Footer.svelte';
 
     import { blogUrl, apiUrl } from '../../lib/variables.js';
 
@@ -140,6 +142,8 @@
             </div>
         </article>
     </main>
+
+    <Footer />
 </body>
 
 </html>
