@@ -1,7 +1,11 @@
 {
-  "name": "@example/starter",
+  "name": "blog",
   "version": "0.0.1",
   "private": true,
+  "description": "Personal blog with Astro using Svelte component",
+  "author": {
+    "name": "AmineAML"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

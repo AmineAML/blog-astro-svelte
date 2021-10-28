@@ -8,6 +8,7 @@
 	const responseArt = await fetch(`${apiUrl}/articles`);
 	const dataArt = await responseArt.json();
 ---
-<section>
+
+<main class="container mx-auto px-4 max-w-xl">
 	<Default data={[{ name: 'all'},...data]} dataArt={dataArt} dataArtAsCopy={dataArt} client:load />
-</section>
+</main>
