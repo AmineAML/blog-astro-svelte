@@ -19,4 +19,9 @@ export default {
   renderers: [
     "@astrojs/renderer-svelte"
   ],
+  // markdownOptions: {
+  //   remarkPlugins: [
+  //     [import('remark-gfm'), { behavior: 'prepend' }]
+  //   ],
+  // },
 };
