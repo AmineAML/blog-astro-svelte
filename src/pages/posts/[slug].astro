@@ -135,7 +135,8 @@
                 <PostHeader title={data.title} image={data.image} imageSource={data.image_source} topics={data.topics} publishedAt={data.published_at} author={data.author} />
                 <div class="divider" />
                 <PostContent content={data.content} />
-                <PostQuote quote={data.quote} quoteBy={data.quote_by} />
+                <!-- Quotes are optional -->
+                {data.quote != null ? <PostQuote quote={data.quote} quoteBy={data.quote_by} /> : ''}
                 <div class="divider" />
                 <PostShare url={url} />
                 <PostAuthor author={data.author} />

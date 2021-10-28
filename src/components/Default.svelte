@@ -1,6 +1,6 @@
 <script>
 	import PostPreview from './PostPreview.svelte'
-	import Search from "./Search.svelte"
+	// import Search from "./Search.svelte"
 
     export let data;
     export let dataArt;
@@ -87,7 +87,7 @@
 
     <div class="divider" />
 
-    <Search />
+    <!-- <Search /> -->
 
     {#each [...dataArt].reverse() as article}
         <PostPreview title={article.title} topics={article.topics} publishedAt={article.published_at} author={article.author} description={article.description} slug={article.slug} image={article.image}/>

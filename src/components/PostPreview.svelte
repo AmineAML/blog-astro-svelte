@@ -1,30 +1,5 @@
 <script>
-    	const months = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December'
-	];
-
-	const formatDate = (date) => {
-		var d = new Date(date);
-
-		const month = months[d.getMonth()];
-
-		const day = d.getDate();
-
-		const year = d.getFullYear();
-
-		return `${month} ${day}, ${year}`;
-	};
+    import { formatDate } from '../lib/formatting.js'
 
     export let title
 

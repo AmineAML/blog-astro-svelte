@@ -1,4 +1,5 @@
 <script>
+  import { formatDate } from '../lib/formatting.js'
   export let title;
 
   export let image;
@@ -10,33 +11,6 @@
   export let publishedAt;
 
   export let author;
-
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const formatDate = (date) => {
-    var d = new Date(date);
-
-    const month = months[d.getMonth()];
-
-    const day = d.getDate();
-
-    const year = d.getFullYear();
-
-    return `${month} ${day}, ${year}`;
-  };
 </script>
 
 <section class="flex flex-col title">
