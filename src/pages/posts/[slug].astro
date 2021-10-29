@@ -1,16 +1,11 @@
 ---
     import PostContent from '../../components/PostContent.astro';
-
     import PostHeader from '../../components/PostHeader.svelte';
-
     import PostQuote from '../../components/PostQuote.svelte';
-
     import PostShare from '../../components/PostShare.svelte';
-
     import PostAuthor from '../../components/PostAuthor.svelte';
-
     import Footer from '../../components/Footer.svelte';
-
+    import GoogleAnalytics from '../../components/GoogleAnalytics.astro';
     import { blogUrl, apiUrl } from '../../lib/variables.js';
 
     const { slug } = Astro.request.params;
@@ -148,6 +143,8 @@
     </main>
 
     <Footer />
+
+    <GoogleAnalytics />
 </body>
 
 </html>

@@ -2,6 +2,7 @@
 import Posts from '../components/Posts.astro';
 import Navbar from '../components/Navbar.svelte';
 import Footer from '../components/Footer.svelte';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import { blogUrl, blogLogo } from '../lib/variables.js';
 
 let title = 'Blog | Amine Amellouk';
@@ -54,4 +55,6 @@ let permaLink = blogUrl;
         <Footer />
         <p class="fixed bottom-0 left-0">These posts are a preview!</p>
     </body>
+
+    <GoogleAnalytics />
 </html>
