@@ -133,8 +133,8 @@
     </header>
 
     <main class="container mx-auto px-4 max-w-xl">
-        <article itemscope itemtype="http://schema.org/Article">
-            <div class="flex flex-col space-y-2 mt-10 mb-10">
+        <article itemscope itemtype="http://schema.org/Article" class="flex flex-col space-y-2 mt-10 mb-10">
+            <!-- <div class="flex flex-col space-y-2 mt-10 mb-10"> -->
                 <PostHeader title={data.title} image={data.image} imageSource={data.image_source} topics={data.topics} publishedAt={data.published_at} author={data.author} />
                 <div class="divider" />
                 <PostContent content={data.content} />
@@ -143,7 +143,7 @@
                 <div class="divider" />
                 <PostShare url={url} />
                 <PostAuthor author={data.author} />
-            </div>
+            <!-- </div> -->
         </article>
     </main>
 
