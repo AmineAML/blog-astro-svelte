@@ -71,7 +71,7 @@
 
     <div class="flex justify-center flex-wrap article">
         <div>
-            <div class="flex">
+            <div class="flex" style="color: #FEF9E6;">
                 {#each data as { name }}
                     {#if name == 'all'}
                         {#if dataArt.length != dataArtAsCopy.length}

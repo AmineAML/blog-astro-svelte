@@ -35,7 +35,7 @@
         <h2 class="card-title title my-2 text-xl">{title}</h2>
         <p class="flex card-body">{description}</p>
         <div class="card-actions">
-            <a href={`/posts/${slug}`} class="text-gray-500">read more</a>
+            <a href={`/posts/${slug}`} style="color: #625F54;">Read Post</a>
         </div>
     </div>
 </div>
