@@ -6,6 +6,7 @@
     import PostAuthor from '../../components/PostAuthor.svelte';
     import Footer from '../../components/Footer.svelte';
     import GoogleAnalytics from '../../components/GoogleAnalytics.astro';
+    import Navbar from '../../components/Navbar.svelte';
     import { blogUrl, apiUrl } from '../../lib/variables.js';
 
     const { slug } = Astro.request.params;
@@ -118,14 +119,7 @@
 </head>
 
 <body>
-    <header class="navbar mb-2 shadow-lg rounded-box">
-	        <div class="flex-1 px-2 mx-2">
-		        <div class="items-stretch hidden lg:flex">
-			        <a class="btn btn-ghost btn-sm rounded-btn" href="/"> Blog </a>
-			        <a class="btn btn-ghost btn-sm rounded-btn" href="/about"> About </a>
-		        </div>
-	        </div>
-    </header>
+    <Navbar />
 
     <main class="container mx-auto px-4 max-w-xl">
         <article itemscope itemtype="http://schema.org/Article" class="flex flex-col space-y-2 mt-10 mb-10">
