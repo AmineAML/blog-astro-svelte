@@ -18,9 +18,9 @@
 <div class="flex flex-col">
     <h1 class="text-4xl my-10 font-extrabold mx-auto title">Amine Amellouk's Blog</h1>
     
-    <p class="mx-auto article">
+    <!-- <p class="mx-auto article">
         Software Developer with a passion for the Back-End engineering and the DevOps.
-    </p>
+    </p> -->
     
     <div class="flex space-x-2 mx-auto">
         <a href="https://www.amineamellouk.com" aria-label="portfolio">

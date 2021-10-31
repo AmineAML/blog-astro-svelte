@@ -23,7 +23,7 @@
                 </a>
             </li>
         </ul>
-        <span class="flex justify-center">Copyright &copy; 2020, Amine Amellouk</span>
+        <span class="flex justify-center">Copyright &copy; 2021, Amine Amellouk</span>
         <span class="flex flex-wrap space-x-1 justify-center">
             <span>Made with</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="red">
