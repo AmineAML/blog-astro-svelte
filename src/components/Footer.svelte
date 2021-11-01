@@ -30,9 +30,9 @@
                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
             </svg>
             <span>and built with</span>
-            <a href="https://astro.build/" class="text-blue-700">Astro</a>
+            <a href="https://astro.build/" class="text-blue-700" target="blank">Astro</a>
             <span>- Source code available on</span>
-            <a href="https://github.com/AmineAML/blog-astro-svelte" class="text-blue-700">GitHub</a>
+            <a href="https://github.com/AmineAML/blog-astro-svelte" class="text-blue-700" target="blank">GitHub</a>
         </span>
     </div>
 </footer>
