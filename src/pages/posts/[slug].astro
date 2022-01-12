@@ -20,14 +20,14 @@
 
         rss({
             // The RSS Feed title, description, and custom metadata.
-            title: 'Amine Amellouk\'s blog',
+            title: 'EchoSpaceDev Blog',
             description: 'A blog about programming, Software Development with tutorials and topics discussions mainly about the Back-End and the DevOps',
             customData: `<language>en-us</language>`,
             // The list of items for your RSS feed, sorted.
             items: [...data].reverse().map(article => ({
                 title: article.title,
                 description: article.description,
-                link: `${apiUrl}/posts/${article.slug}`,
+                link: `${blogUrl}/posts/${article.slug}`,
                 pubDate: article.published_at,
             })),
             // Optional: Customize where the file is written to.
@@ -47,7 +47,7 @@
 
     const url = `${blogUrl}/posts/${slug}`;
 
-    const title = `${data.title} | Amine Amellouk\'s blog`;
+    const title = `${data.title} | EchoSpaceDev Blog`;
 ---
 
 <!doctype html>
@@ -91,7 +91,7 @@
     <meta property="og:image" content={data.image.formats.medium.url}>
     <meta property="og:image:alt" content={`Thumbnail for ${data.title} blog post`}>
     <meta property="og:description" content={data.description}>
-    <meta property="og:site_name" content="Amine Amellouk's Blog">
+    <meta property="og:site_name" content="EchoSpaceDev Blog">
     <meta property="article:published_time" content={data.published_at}>
     <meta property="article:modified_time" content={data.updated_at}>
     <meta property="article:author:first_name" content={data.author.name.split(' ')[0]}>
