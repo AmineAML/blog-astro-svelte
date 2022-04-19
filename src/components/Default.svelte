@@ -19,7 +19,7 @@
 
 <div class="flex flex-col">
   <h1 class="text-4xl my-10 font-extrabold mx-auto title">
-    Amine Amellouk's Blog
+    The EchoSpaceDev Blog
   </h1>
 
   <!-- <p class="mx-auto article">
